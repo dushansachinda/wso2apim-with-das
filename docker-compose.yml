@@ -18,10 +18,25 @@ services:
       context: .
       dockerfile: identity/Dockerfile
     ports:
-      - "9768:9763"
-      - "9448:9443"  
+      - "9763:9763"
+      - "9443:9443"  
     environment:
-      - SLEEP=200    
+      - SLEEP=200  
+      
+  esb:
+    container_name: esb
+    depends_on: 
+      - dbms
+      - identity
+    build:
+      context: .
+      dockerfile: esb/Dockerfile
+    ports:
+      - "9764:9763"
+      - "9444:9443"
+      - "8281:8280"
+      - "8244:8243" 
+        
   das:
     container_name: apim_das
     depends_on: 
@@ -30,8 +45,8 @@ services:
       context: .
       dockerfile: das/Dockerfile
     ports:
-      - "9767:9763"
-      - "9447:9443"
+      - "9765:9763"
+      - "9445:9443"
     environment:
       - SLEEP=200 
   apim:
@@ -43,25 +58,11 @@ services:
       context: .
       dockerfile: apim/Dockerfile
     ports:
-      - "9763:9763"
-      - "9443:9443"
-      - "8280:8280"
-      - "8243:8243"
+      - "9766:9763"
+      - "9446:9443"
+      - "8283:8280"
+      - "8246:8243"
     environment:
       - SLEEP=200 
-      
-  esb:
-    container_name: esb
-    depends_on: 
-      - dbms
-      - das
-      - identity
-    build:
-      context: .
-      dockerfile: esb/Dockerfile
-    ports:
-      - "9764:9763"
-      - "9444:9443"
-      - "8281:8280"
-      - "8244:8243"  
+
   
