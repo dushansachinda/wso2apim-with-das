@@ -2,7 +2,7 @@ FROM nuwanbando/javabase
 
 RUN mkdir wso2 
 
-COPY packs/wso2am-1.10.0.zip wso2/
+COPY packs/wso2esb-4.9.0.zip wso2/
 
 RUN cd wso2/ && \
         unzip wso2esb-4.9.0.zip
