@@ -1,3 +1,5 @@
+FROM nuwanbando/javabase
+
 RUN mkdir wso2 
 
 COPY packs/wso2am-1.10.0.zip wso2/

@@ -1,3 +1,5 @@
+FROM nuwanbando/javabase
+
 RUN mkdir wso2 
 
 COPY packs/wso2is-5.1.0.zip wso2/
