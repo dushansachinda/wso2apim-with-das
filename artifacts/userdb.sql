@@ -464,10 +464,9 @@ CREATE TABLE UM_HYBRID_REMEMBER_ME(
 			PRIMARY KEY (UM_ID, UM_TENANT_ID)
 )ENGINE INNODB;
 
-
---**************
--- identiy Tables
--- *************
+-- ################################
+-- Identity specific data
+-- ################################
 
 CREATE TABLE IF NOT EXISTS IDN_BASE_TABLE (
             PRODUCT_NAME VARCHAR(20),
