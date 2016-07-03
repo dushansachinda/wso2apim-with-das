@@ -7,13 +7,18 @@ Following instructions will help you to setup the deployment
 3. navigate into the parent directory (wso2apim-with-das)
 4. Execute ``` docker-compose up -d ```
 5. Add following entries to /etc/hosts
-e.g
-192.168.59.101 bt.qsp.esb
-192.168.59.101 bt.qsp.is
-192.168.59.101 bt.qsp.apim
-192.168.59.101 bt.qsp.das
 
-Identity Server port offset 0  9443
+e.g
+
+* 192.168.59.101 bt.qsp.esb
+* 192.168.59.101 bt.qsp.is
+* 192.168.59.101 bt.qsp.apim
+* 192.168.59.101 bt.qsp.das
+
+SSO registration at IS
+https://bt.qsp.esb:9444/carbon/admin/logout_action.jsp?logoutcomplete=true
+
+IS port offset 0  9443
 ESB port offset 1  9444
 
 This will setup 

@@ -12,6 +12,8 @@ COPY identity/carbon/ /mnt/wso2/carbon-home/
 COPY artifacts/mysql-connector-java-5.1.34-bin.jar /wso2/wso2is-5.1.0/repository/components/lib/
 COPY identity/carbon/repository/conf/datasources/master-datasources.xml /wso2/wso2is-5.1.0/repository/conf/datasources/
 COPY identity/carbon/repository/conf/carbon.xml /wso2/wso2is-5.1.0/repository/conf/
+COPY identity/carbon/repository/conf/identity/identity.xml /wso2/wso2is-5.1.0/repository/conf/identity
+
 
 CMD ["sh", "/wso2/wso2is-5.1.0/bin/wso2server.sh"]
 
