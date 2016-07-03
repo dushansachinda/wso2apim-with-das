@@ -19,8 +19,21 @@ services:
       dockerfile: identity/Dockerfile
     ports:
       - "9768:9763"
-      - "9448:9443"      
-   
+      - "9448:9443"  
+    environment:
+      - SLEEP=200    
+  das:
+    container_name: apim_das
+    depends_on: 
+      - dbms
+    build:
+      context: .
+      dockerfile: das/Dockerfile
+    ports:
+      - "9767:9763"
+      - "9447:9443"
+    environment:
+      - SLEEP=200 
   apim:
     container_name: apim
     depends_on: 
@@ -34,17 +47,8 @@ services:
       - "9443:9443"
       - "8280:8280"
       - "8243:8243"
-  das:
-    container_name: apim_das
-    depends_on: 
-      - dbms
-    build:
-      context: .
-      dockerfile: das/Dockerfile
-    ports:
-      - "9767:9763"
-      - "9447:9443"
-      
+    environment:
+      - SLEEP=200 
       
   esb:
     container_name: esb
