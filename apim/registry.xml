@@ -203,7 +203,7 @@
 
    <remoteInstance url="https://gateway.apim-wso2.com"> 
        <id>gov</id>
-       <cacheId>user@jdbc:mysql://apim_apimrdbms:3306/regdb</cacheId>
+       <cacheId>user@jdbc:mysql://rdbms:3306/regdb</cacheId>
        <dbConfig>govregistry</dbConfig>
        <readOnly>false</readOnly>
        <enableCache>true</enableCache>

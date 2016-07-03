@@ -13,7 +13,7 @@
             <description>The datasource used for analytics record store</description>
             <definition type="RDBMS">
                <configuration>
-                 <url>jdbc:mysql://apim_apimrdbms:3306/ANALYTICS_EVENT_STORE?autoReconnect=true</url>
+                 <url>jdbc:mysql://rdbms:3306/ANALYTICS_EVENT_STORE?autoReconnect=true</url>
                  <username>root</username>
                  <password>root</password>
                  <defaultAutoCommit>false</defaultAutoCommit>
@@ -32,7 +32,7 @@
             <description>The datasource used for analytics record store</description>
             <definition type="RDBMS">
                <configuration>
-                 <url>jdbc:mysql://apim_apimrdbms:3306/ANALYTICS_PROCESSED_DATA_STORE?autoReconnect=true</url>
+                 <url>jdbc:mysql://rdbms:3306/ANALYTICS_PROCESSED_DATA_STORE?autoReconnect=true</url>
                  <username>root</username>
                  <password>root</password>
                  <defaultAutoCommit>false</defaultAutoCommit>

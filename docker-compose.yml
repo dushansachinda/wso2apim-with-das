@@ -1,7 +1,7 @@
 version: '2'
 services:
   dbms:
-    container_name: apim_apimrdbms
+    container_name: rdbms
     build: 
         context: .
         dockerfile: database/Dockerfile
@@ -9,6 +9,18 @@ services:
      - "3306:3306"
     environment:
         MYSQL_ROOT_PASSWORD: root
+ 
+  identity:
+    container_name: wso2-is
+    depends_on: 
+      - dbms
+    build:
+      context: .
+      dockerfile: identity/Dockerfile
+    ports:
+      - "9768:9763"
+      - "9448:9443"      
+   
   apim:
     container_name: apim
     depends_on: 
@@ -32,3 +44,19 @@ services:
     ports:
       - "9767:9763"
       - "9447:9443"
+      
+  esb:
+    container_name: esb
+    depends_on: 
+      - dbms
+      - das
+      - identity
+    build:
+      context: .
+      dockerfile: esb/Dockerfile
+    ports:
+      - "9764:9763"
+      - "9444:9443"
+      - "8281:8280"
+      - "8244:8243"  
+  

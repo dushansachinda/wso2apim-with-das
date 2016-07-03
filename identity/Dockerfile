@@ -1,0 +1,18 @@
+RUN mkdir wso2 
+
+COPY packs/wso2is-5.1.0.zip wso2/
+
+RUN cd wso2/ && \
+        unzip wso2is-5.1.0.zip
+        
+COPY esb/carbon/ /mnt/wso2/carbon-home/
+
+COPY artifacts/mysql-connector-java-5.1.34-bin.jar /mnt/wso2/carbon-home/repository/components/lib/
+
+CMD ["sh", "/wso2/wso2is-5.1.0/bin/wso2server.sh"]
+
+
+EXPOSE 9763
+EXPOSE 9443
+EXPOSE 7611
+EXPOSE 7711
