@@ -14,7 +14,7 @@ COPY artifacts/mysql-connector-java-5.1.34-bin.jar /mnt/wso2/carbon-home/reposit
 CMD ["sh", "/wso2/wso2is-5.1.0/bin/wso2server.sh"]
 
 
-EXPOSE 9763
-EXPOSE 9443
-EXPOSE 7611
-EXPOSE 7711
+#EXPOSE 9763
+#EXPOSE 9443
+#EXPOSE 7611
+#EXPOSE 7711
