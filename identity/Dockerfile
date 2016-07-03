@@ -7,7 +7,7 @@ COPY packs/wso2is-5.1.0.zip wso2/
 RUN cd wso2/ && \
         unzip wso2is-5.1.0.zip
         
-COPY esb/carbon/ /mnt/wso2/carbon-home/
+COPY identity/carbon/ /mnt/wso2/carbon-home/
 
 COPY artifacts/mysql-connector-java-5.1.34-bin.jar /mnt/wso2/carbon-home/repository/components/lib/
 
